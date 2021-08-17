@@ -1,0 +1,207 @@
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&family=Yanone+Kaffeesatz:wght@300;400&display=swap');
+
+:root {
+  --purple: #7829F1;
+  --primary-color: #707070;
+  --bg-green: #A8E1D7;
+  --sand: #FAF9F5;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--bg-green);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh; /* OCUPA 100% DA ALTURA DA MINHA TELA */
+}
+
+h1 {
+  font-family: 'Varela Round', sans-serif;
+  color: var(--purple);
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+h2 {
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  color: var(--purple);
+  font-size: 3.1rem;
+  margin: 0;
+}
+
+p {
+  font-family: 'Varela Round', sans-serif;
+  color: var(--primary-color);
+  margin: 0;
+}
+
+.container {
+  width: 62.5rem;
+  height: 31.2rem;
+  background: var(--sand);
+  display: flex;
+}
+
+.menu {
+  color: var(--primary-color);
+  width: 4.3rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.menu svg {
+  width: 100%;
+  height: 3.75rem;
+  padding: 0.6rem;
+}
+
+.menu .selected {
+  color: var(--purple);
+}
+
+.board .card {
+  height: 100%;
+  padding: 2.5rem;
+}
+
+.board-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.board-container .flex-board {
+  width: 37.5rem;
+  height: 370px;
+  background: var(--purple);
+  position: absolute;
+  right: 18.75rem;
+  border-radius: 5rem;
+}
+
+.flex-board .illustration {
+  width: 200px;
+  position: absolute;
+  top: -50px;
+  left: 50px;
+  opacity: 1;
+}
+
+.flex-board-open {
+  animation: board-right-grow 0.5s ease 0s forwards;
+}
+
+.flex-board-open   .illustration {
+  animation: show 0.5s forwards;
+}
+
+.flex-board-close {
+  animation: board-right-shrink 0.5s ease 0s forwards;
+}
+
+.flex-board-close .illustration {
+  animation: hide 0.5s forwards;
+}
+
+.board-container .board {
+  background: white;
+  width: 37.5rem;
+  height: 23.1rem;
+  position: absolute;
+  right: 1.8rem;
+  border-radius: 5rem;
+  display: flex;
+  padding: 0 1.8rem;
+  -webkit-box-shadow: -9px 13px 31px -16px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: -9px 13px 31px -16px rgba(0, 0, 0, 0.75);
+  box-shadow: -9px 13px 31px -16px rgba(0, 0, 0, 0.75);
+}
+
+.board-container .board .board-left, 
+.board-right {
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+  scroll-behavior: smooth;
+}
+
+.board-left .info-img,
+.board-right .info-img {
+  margin-top: .9rem;
+  height: 9.3rem;
+  border-radius: 1rem;
+}
+
+.board-right p {
+  margin: .3rem;
+}
+
+.board-right h2 {
+  margin: 1.25rem 0;
+}
+
+.inline-content {
+  display: flex;
+  align-items: center;
+}
+
+.inline-content .header svg,
+.board-right .inline-content .header svg {
+  color: var(--purple);
+  width: 1.8rem;
+  height: 1.8rem;
+}
+
+.inline-content .subheader svg, 
+.board-right .inline-content .subheader svg {
+  color: var(--primary-color);
+}
+
+.board-container .board .board-left .subheader.inline-content svg{
+  margin: 0 .3rem;
+}
+
+@keyframes board-right-grow {
+  0% {
+    width: 0px;
+  }
+  100% {
+    width: 37.5rem;
+  }
+}
+
+@keyframes board-right-shrink {
+  0% {
+    width: 37.5rem;
+  }
+  100% {
+    width: 0px;
+  }
+}
+
+@keyframes show {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes hide {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
