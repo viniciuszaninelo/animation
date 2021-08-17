@@ -1,4 +1,4 @@
-#animation<br />
+# animation<br />
 Projeto realiazado com o objetivo de aprender sobre animações. 
 
 ## Desktop view
